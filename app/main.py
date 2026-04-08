@@ -34,6 +34,10 @@ app = FastAPI(
     lifespan= lifespan
 )
 
+@app.get('/')
+async def root():
+    return {"message": "환영합니다! chatgpt 기반 고객 리뷰 분석 서비스입니다."}
+
 @app.get('/health')
 def health_check():
     return {"status" : "healthy"}
